@@ -13,6 +13,16 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mongoose": "^5.12.14"
-  }
+    "mongoose": "^5.12.14",
+    "nodejs": "0.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wallaceAzevedo/PontosInteresse_App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wallaceAzevedo/PontosInteresse_App/issues"
+  },
+  "homepage": "https://github.com/wallaceAzevedo/PontosInteresse_App#readme"
 }
