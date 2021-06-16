@@ -1,0 +1,18 @@
+{
+  "name": "PontosInteresse_App",
+  "version": "1.0.0",
+  "description": "aplicação que permita aos utilizadores inserirem pontos de interesse genéricos na base de dados (mongoDB), a base de dados crescerá com a inserção de registos de vários utilizadores em vários locais geográficos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14"
+  }
+}
