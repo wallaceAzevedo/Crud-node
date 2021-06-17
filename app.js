@@ -1,10 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
- app.get('/', function(req, res){ 
-     res.send('END POINT INVÁLIDO!');
-    });
+app.use(bodyParser.json());
+
+app.get('/', function(req, res){ 
+    res.send('END POINT INVÁLIDO!');
+  });
 
   const routes = require('./routes/api');
   app.use('/api', routes);
