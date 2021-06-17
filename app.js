@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+
+
 // Ligar á B.D.: 'test'->user da BD, ´nnn´->pass
 mongoose.connect('mongodb+srv://test:nnn@nodejscluster-art2k.mongodb.net/test?retryWrites=true');
 
@@ -14,6 +16,7 @@ mongoose.connection.on('connected', function () {
 mongoose.connection.on('error', (err) => {
   console.log('Database error' +err);
 });
+
 
 const app = express();
 

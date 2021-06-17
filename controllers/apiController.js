@@ -1,3 +1,6 @@
+// importar modelo
+//const PI = require('../models/PImodel');
+
 exports.test = function (req, res) {
     res.send('Olá! Teste ao Controller');
   };
@@ -26,4 +29,13 @@ exports.create = function (req, res) {
    type: 'POST',
    name: req.body.name,
    rank: req.body.rank });
+};
+
+// adicionar novo ponto de interesse
+exports.create = function (req, res) {
+  // cria novo ‘pi’ na BD a partir do request, depois, devolve o
+  //‘pi’ criado ao cliente
+  PI.create(req.body).then(function(pi){
+  res.send(pi);
+  });
 };
