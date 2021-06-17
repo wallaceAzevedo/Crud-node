@@ -6,8 +6,8 @@ const app = express();
      res.send('END POINT INVÁLIDO!');
     });
 
-  const api = require('./routes/api');
-  app.use('/', routes);
+  const routes = require('./routes/api');
+  app.use('/api', routes);
 
 let port = 5000;
 app.listen(process.env.port || port, () =>{
