@@ -1,11 +1,4 @@
-// adicionar novo ponto de interesse
-exports.create = function (req, res) {
-  console.log('You made a POST request: ', req.body);
-  res.send({
-   type: 'POST',
-   name: req.body.name,
-   rank: req.body.rank });
-};
+const { post } = require("../routes/api");
 
 exports.test = function (req, res) {
     res.send('Olá! Teste ao Controller');
@@ -17,7 +10,7 @@ exports.details = function (req, res) {
 };
 // TODO: adicionar novo ponto de interesse
 exports.add = function (req, res) {
-  res.send({ type: 'POST' });
+  res.send({ type:'POST' });
 };
 // TODO: atualizar ponto de interesse
 exports.update = function (req, res) {
@@ -28,3 +21,12 @@ exports.delete = function (req, res) {
   res.send({type: 'DELETE'});
 };
 
+// adicionar novo ponto de interesse
+exports.create = function (req, res) {
+  console.log('You made a POST request: ', req.body);
+  res.send({
+   type: 'POST',
+   name: req.body.name,
+   rank: req.body.rank 
+  });
+};
