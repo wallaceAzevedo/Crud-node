@@ -2,8 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-
-
 // Ligar á B.D.: 'test'->user da BD, ´nnn´->pass
 mongoose.connect('mongodb+srv://test:nnn@nodejscluster-art2k.mongodb.net/test?retryWrites=true');
 
@@ -17,15 +15,12 @@ mongoose.connection.on('error', (err) => {
   console.log('Database error' +err);
 });
 
-
 const app = express();
-
-app.use(bodyParser.json());
 
 app.get('/', function(req, res){ 
     res.send('END POINT INVÁLIDO!');
-  });
-
+});
+  app.use(bodyParser.json());
   const routes = require('./routes/api');
   app.use('/api', routes);
 
