@@ -10,7 +10,10 @@ router.get('/teste', apiController.test);
 router.get('/details',apiController.details);
 
 // TODO: adicionar novo ponto de interesse
-router.post('/interest',apiController.add);
+//router.post('/interest',apiController.add);
+
+// TODO: adicionar novo ponto de interesse
+router.post('/interest',apiController.create);
 
 // TODO: atualizar ponto de interesse
 router.put('/interest/:id',apiController.update);

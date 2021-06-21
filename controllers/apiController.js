@@ -8,10 +8,7 @@ exports.test = function (req, res) {
 exports.details = function (req, res) {
   res.send({type: 'GET'});
 };
-// TODO: adicionar novo ponto de interesse
-exports.add = function (req, res) {
-  res.send({ type:'POST' });
-};
+
 // TODO: atualizar ponto de interesse
 exports.update = function (req, res) {
   res.send({type: 'PUT'});
@@ -29,4 +26,9 @@ exports.create = function (req, res) {
    name: req.body.name,
    rank: req.body.rank 
   });
+};
+
+// TODO: adicionar novo ponto de interesse
+exports.add = function (req, res) {
+  res.send({ type:'POST' });
 };
