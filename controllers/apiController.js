@@ -20,10 +20,18 @@ exports.delete = function (req, res) {
   res.send({type: 'DELETE'});
 };
 
-exports.create = function (req, res) {
+/*exports.create = function (req, res) {
   // cria novo ‘pi’ na BD a partir do request, depois, devolve o
   //‘pi’ criado ao cliente
   PI.create(req.body).then(function(pi){
   res.send(pi);
   });
+};
+*/
+
+// ocorrido um erro, ‘next’ chama proximo middleware (ver ‘app.js’)
+exports.create = function (req, res, next) {
+  PI.create(req.body).then(function(pi){
+    res.send(pi);
+  }).catch(next);
 };
