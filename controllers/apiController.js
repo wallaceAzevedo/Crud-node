@@ -1,5 +1,7 @@
 const PI = require('../models/PImodel');
 
+//const { post } = require("../routes/api");
+
 exports.test = function (req, res) {
     res.send('Olá! Teste ao Controller');
   };
@@ -8,10 +10,7 @@ exports.test = function (req, res) {
 exports.details = function (req, res) {
   res.send({type: 'GET'});
 };
-// TODO: adicionar novo ponto de interesse
-exports.add = function (req, res) {
-  res.send({type: 'POST'});
-};
+
 // TODO: atualizar ponto de interesse
 exports.update = function (req, res) {
   res.send({type: 'PUT'});
