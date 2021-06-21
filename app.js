@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 // Ligar á B.D.: 'test'->user da BD, ´nnn´->pass
@@ -16,15 +15,23 @@ mongoose.connection.on('error', (err) => {
 });
 
 const app = express();
-
-app.use(bodyParser.json());
+;
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}))
 
 app.get('/', function(req, res){ 
     res.send('END POINT INVÁLIDO!');
-  });
+});
 
-  const routes = require('./routes/api');
-  app.use('/api', routes);
+const routes = require('./routes/api');
+app.use('/api', routes);
+
+// error handling middleware
+app.use(function(err, req, res, next){
+  console.log(err);
+ // ‘res.status(422)’->muda o status
+ res.status(422).send({error: err.message});
+});
 
 let port = 5000;
 app.listen(process.env.port || port, () =>{
