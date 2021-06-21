@@ -1,16 +1,30 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// Ligar á B.D.: 'test'->user da BD, ´nnn´->pass
+mongoose.connect('mongodb+srv://PontosInteresse:nnn@teste.stcg8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+
+// Confirma ligação na consola
+mongoose.connection.on('connected', function () {
+  console.log('Connected to Database' +'test');
+});
+
+// Mensagem de Erro
+mongoose.connection.on('error', (err) => {
+  console.log('Database error' +err);
+});
+
 const app = express();
 
+app.use(bodyParser.json());
 
 app.get('/', function(req, res){ 
     res.send('END POINT INVÁLIDO!');
-});
+  });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-const routes = require('./routes/api');
-app.use('/api', routes);
+  const routes = require('./routes/api');
+  app.use('/api', routes);
 
 let port = 5000;
 app.listen(process.env.port || port, () =>{
