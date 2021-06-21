@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 // Ligar á B.D.: 'test'->user da BD, ´nnn´->pass
-mongoose.connect('mongodb+srv://test:nnn@nodejscluster-art2k.mongodb.net/test?retryWrites=true');
+mongoose.connect('mongodb+srv://PontosInteresse:nnn@teste.stcg8.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 
 // Confirma ligação na consola
 mongoose.connection.on('connected', function () {

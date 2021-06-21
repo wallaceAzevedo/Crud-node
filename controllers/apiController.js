@@ -1,3 +1,5 @@
+const PI = require('../models/PImodel');
+
 exports.test = function (req, res) {
     res.send('Olá! Teste ao Controller');
   };
@@ -19,11 +21,10 @@ exports.delete = function (req, res) {
   res.send({type: 'DELETE'});
 };
 
-// adicionar novo ponto de interesse
 exports.create = function (req, res) {
-  console.log('You made a POST request: ', req.body);
-  res.send({
-   type: 'POST',
-   name: req.body.name,
-   rank: req.body.rank });
+  // cria novo ‘pi’ na BD a partir do request, depois, devolve o
+  //‘pi’ criado ao cliente
+  PI.create(req.body).then(function(pi){
+  res.send(pi);
+  });
 };
