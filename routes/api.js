@@ -9,6 +9,9 @@ router.get('/teste', apiController.test);
 // TODO: listar pontos de interesse da BD
 router.get('/details',apiController.details);
 
+// TODO: listar ponto de interesse da BD
+router.get('/detailss/:id',apiController.detailss);
+
 // TODO: adicionar novo ponto de interesse
 //router.post('/interest',apiController.add);
 
